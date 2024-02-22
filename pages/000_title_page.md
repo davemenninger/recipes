@@ -1,3 +1,0 @@
-# Kartana Example Pages
-
-Kartana is a tool for making small pages of content.  Here are some example pages...
