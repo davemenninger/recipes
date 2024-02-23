@@ -25,13 +25,14 @@ classoption:
 header-includes:
 - |
   ```{=latex}
+  \usepackage{hyperref}
   \usepackage{titlesec}
   \newcommand{\sectionbreak}{\clearpage}
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyhead{}
   \renewcommand{\headrule}{}
-  \fancyfoot[CO,CE]{i'm the footer}
+  \fancyfoot[CO,CE]{ \href{https://github.com/davemenninger/recipes}{https://github.com/davemenninger/recipes}}
   \fancyfoot[RO,LE]{\thepage}
   ```
 ---
