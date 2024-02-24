@@ -7,13 +7,7 @@ geometry:
  - left=0.5in
  - right=0.5in
 
-mainfont: Alegreya-Regular.ttf
-mainfontoptions:
-- Path=./fonts/alegreya/
-- Scale=1.0
-- BoldFont=Alegreya-Bold.ttf
-- ItalicFont=Alegreya-Italic.ttf
-- BoldItalicFont=Alegreya-BoldItalic.ttf
+mainfont: Retni Sans
 
 colorlinks: true
 
