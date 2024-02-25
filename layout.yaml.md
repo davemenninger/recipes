@@ -7,7 +7,13 @@ geometry:
  - left=0.5in
  - right=0.5in
 
-mainfont: Retni Sans
+mainfont: RetniSans-Regular.ttf
+mainfontoptions:
+- Path=./fonts/retnisans/
+- Scale=1.0
+- BoldFont=RetniSans-Bold.ttf
+- ItalicFont=RetniSans-Italic.ttf
+- BoldItalicFont=RetniSans-BoldItalic.ttf
 
 colorlinks: true
 
