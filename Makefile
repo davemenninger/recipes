@@ -2,8 +2,8 @@
 
 metadata_files = metadata.yaml.md layout.yaml.md
 source_files = $(wildcard pages/*.md)
-pdf_file = menninger_cookbook.pdf
-html_file = menninger_cookbook.html
+pdf_file = cookbook.pdf
+html_file = cookbook.html
 
 pdf: ## Generates output.pdf
 pdf: $(pdf_file)
