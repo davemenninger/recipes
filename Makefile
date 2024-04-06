@@ -14,7 +14,7 @@ html: $(html_file)
 all: pdf html ## Generates both HTML and PDF
 
 deps:
-	apt install \
+	sudo apt install \
 	pandoc \
 	librsvg2-bin \
 	texlive-xetex \
