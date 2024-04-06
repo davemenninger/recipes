@@ -1,4 +1,4 @@
-.PHONY: clean open pdf html all help
+.PHONY: clean open pdf html all help deps
 
 metadata_files = metadata.yaml.md layout.yaml.md
 source_files = $(wildcard pages/*.md)
@@ -13,11 +13,41 @@ html: $(html_file)
 
 all: pdf html ## Generates both HTML and PDF
 
+deps:
+	apt install \
+	pandoc \
+	librsvg2-bin \
+	texlive-xetex \
+	texlive-luatex \
+	texlive-latex-extra
+
+# * SVG content in PDF output requires librsvg2-bin.
+# * YAML metadata in TeX-related output requires texlive-latex-extra.
+# * *.hs filters not set executable requires ghc.
+# * *.js filters not set executable requires nodejs \
+# * *.php filters not set executable requires php \
+# * *.pl filters not set executable requires perl \
+# * *.py filters not set executable requires python \
+# * *.rb filters not set executable requires ruby \
+# * *.r filters not set executable requires r-base-core \
+# * LaTeX output, and PDF output via PDFLaTeX \
+# require texlive-latex-recommended \
+# * XeLaTeX output, and PDF output via XeLaTeX, require texlive-xetex \
+# * LuaTeX output, and PDF output via LuaTeX, require texlive-luatex \
+# * ConTeXt output, and PDF output via ConTeXt, require context \
+# * PDF output via wkhtmltopdf requires wkhtmltopdf \
+# * Roff man and roff ms output, and PDF output via roff ms \
+# require groff \
+# * MathJax-rendered equations require libjs-mathjax \
+# * KaTeX-rendered equations require node-katex \
+# * option --csl may use styles in citation-style-language-styles
+
 $(pdf_file): $(metadata_files) $(source_files)
 	pandoc -s \
 		--resource-path=.:pages:assets \
 		--pdf-engine=xelatex \
-		--embed-resources \
+		--table-of-contents \
+		--toc-depth=1 \
 		$(metadata_files) $(source_files) \
 		-o $(pdf_file)
 
